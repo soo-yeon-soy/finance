@@ -1,3 +1,10 @@
+'''
+- Data : 2022.11.29
+- Author : Jeong Soo Yeon
+- Description :  주가 정보가 저장된 테이블 내 1년치 주가 정보를 로드하여
+                 그 정보로 OBV 지수를 계산하여 매수/매도 타이밍인 종목들을 추천
+
+'''
 import pymysql
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -9,7 +16,7 @@ import sqlalchemy
 
 
 def get_finance_db():
-    finance_db = pymysql.connect(host = 'dev.dlab.kr', port=3386, user='finance', passwd='finance99', db='financedb' )
+    finance_db = pymysql.connect(host = '', port=0, user='', passwd='', db='' )
     finance_cursor = finance_db.cursor()
 
     finance_cursor.execute('''
@@ -143,13 +150,13 @@ if __name__ == '__main__':
     # rsi_test['EMA'] = EMA(rsi_test, period=20)
     # print(rsi_test)
 
-    host = 'dev.dlab.kr'
-    port = 3386
-    user = 'finance_market'
-    passwd = 'finance_market99'
-    db_name = 'finance_market'
+    host = 'dev..kr'
+    port = 0
+    user = ''
+    passwd = ''
+    db_name = ''
 
-    url = "mysql+pymysql://finance_market:finance_market99@dev.dlab.kr:3386/finance_market?charset=utf8mb4"
+    url = "mysql+pymysql://:@/?charset=utf8mb4"
     engine = create_engine(url)
 
     stock_list = get_stock_list(finance_df)

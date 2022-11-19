@@ -1,3 +1,8 @@
+'''
+- Data : 2022.11.29
+- Author : Jeong Soo Yeon
+- Description :  네이버 주식 페이지 내 코스피/코스닥 종목 정보 크롤링
+'''
 import pandas as pd
 from urllib3.util.retry import Retry
 from datetime import datetime
